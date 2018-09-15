@@ -14,6 +14,8 @@ function pinkstone_enqueue_assets() {
     wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
 }
 
+include 'includes/podcast-badge.php';
+
 // extract JetPack pageviews
 // courtesy of Topher: http://wpgr.org/2013/03/02/rendering-jetpack-stats/
 /*

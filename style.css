@@ -1,16 +1,21 @@
 /* 
- Theme Name:   Pinkstone 2016
+ Theme Name:   Pinkstone 2013
  Theme URI:    http://pinkstone.co.uk
  Description:  Child Theme based on TwentyFifteen
  Author:       Jay Versluis
  Author URI:   http://www.wpguru.co.uk
  Template:     twentythirteen
- Version:      1.4
+ Version:      1.5
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 */
 
  /* == CHANGELOG ==
+
+ v1.5 - September 2018
+ * added Apple Podcasts Badge underneath podcast articles
+ * added Sticther Badge underneath podcast articles
+ * source maintenance
 
  v1.4 - September 2018
  * split p margins between top and bottom to better display Google Auto Ads
@@ -388,4 +393,24 @@ p img.alignright {
 img#grav-6d24aab95e30d0e827a22fd7b4f515fa-0.avatar.avatar-74.photo.grav-hashed.grav-hijack, img.avatar.avatar-74.photo {
         width: 115px;
         height: 115px;
+}
+
+/* style Apple Podcasts Badge */
+#apple-badge {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 12px;
+	width: 260px;
+	height: auto;
+}
+
+/* style Stitcher Badge */
+#stitcher-badge {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: -10px;
+	width: 200px;
+	height: auto;
 }
