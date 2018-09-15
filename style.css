@@ -1,0 +1,391 @@
+/* 
+ Theme Name:   Pinkstone 2016
+ Theme URI:    http://pinkstone.co.uk
+ Description:  Child Theme based on TwentyFifteen
+ Author:       Jay Versluis
+ Author URI:   http://www.wpguru.co.uk
+ Template:     twentythirteen
+ Version:      1.4
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+ /* == CHANGELOG ==
+
+ v1.4 - September 2018
+ * split p margins between top and bottom to better display Google Auto Ads
+ * added new Word Count functions
+ * amended List of All Articles template with word counts
+
+ v1.3 - April 2016
+ * slightly larger Gravatar on Author Bio Box, avoiding orphaned wpguru.co.uk URL
+
+ v1.2 - 24/11/2015
+ * removed hyphenations except for links
+ * added clickable links from URLs (like in P2)
+
+ v1.1 - 20/11/2015
+ * added JetPack pageviews to content.php (currently inactive)
+ 
+ v1.0 - 04/11/2015 at 15:00 EST
+ * brand new theme, based on TwentyThirteen
+ * changed themes because P2 made my servers crash!
+ * and because P2 wasn't mobile freindly!
+ * removed author bio box (TwentyThirteen privdes its own)
+ * changed fonts throughout to San Francisco / Helvetica Neue / Sans Serif
+ 
+--------------------------------------------*/
+
+/**********************/
+/* GENERAL 2013 TWEAKS
+/**********************/
+
+/* change fonts */
+body, .site-title, .site-description, .entry-title, .widget-title, h1, h2, h3, h4, h5, h6 {
+	font-family: -apple-system, "Helvetica Neue", "Lucida Grande", sans-serif;
+}
+/* make h1 headlines fatter */
+.entry-title {
+	font-weight:600;
+}
+
+/* stop hypenating words */
+.entry-content, .entry-summary, .page-content, .comment-content {
+		
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	word-wrap: normal;
+}
+
+/* do hyphenate links though */
+.entry-content a, .entry-summary a, .page-content a, .comment-content a {
+	
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	word-wrap: break-word;
+}
+
+/* remove Category from Meta */
+.categories-links {
+  display: none;
+}
+
+/* remove author link */
+.author-link {
+  display: none;
+}
+
+/* code blocks could look better */
+.wp-code-highlight {
+	background: #eee;
+	font-size: 1.1em !important;
+	padding: 10px !important;
+	padding-top: 20px !important;
+	padding-bottom: 20px !important;
+        margin-bottom: 20px !important;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+/* width of code blocks needs to be narrower */
+pre.prettyprint {
+    width: 98% !important;
+}
+
+/* slightly larger text perhaps ? */
+p, .postcontent ul li, .postcontent ol li, .commentcontent ul li, .commentcontent ol li {
+	/* font-size: 1.1em !important; */
+}
+
+/* remove name from Author Bio Box */
+#author-bio-box h3 {
+	display: none;
+}
+
+/* border around JetPack images */
+.jetpack-image-container img {
+	border: double;
+	border-color:#ccc;
+}
+/* no borders on right-aligned thumbnails */
+img.alignright {
+	border:none !important;
+}
+
+/* the search button touches the search box */
+#searchsubmit {
+	margin-left:5px !important;
+}
+
+/* split p margins from top only to top and bottom */
+p {
+	margin-top: 12;
+	margin-bottom: 12;
+}
+
+/* bring back the author byline */
+.single-author .entry-meta .author, .sticky.format-standard .entry-meta .date, .sticky.format-audio .entry-meta .date, .sticky.format-chat .entry-meta .date, .sticky.format-image .entry-meta .date, .sticky.format-gallery .entry-meta .date {
+	display: initial;
+}
+
+/* make blockquotes look handsome */
+.entry-content blockquote {
+	font-size: 1em;
+}
+
+/********************************
+ * eMember Tweaks               *
+ ********************************/
+
+/* eMember: append graphic to Content Protection message */
+.wp-emember-warning-msgbox-text a b:after{
+	text-indent: 0;
+	line-height: initial;
+	/* content:url(Member-Beta-Button.png); */
+	content:'Part of this article has been hidden. Sign up here for full access.';
+	display:block;
+}
+/* eMember: Content Protection message needs styling */
+span.wp-emember-warning-msgbox {
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-width: 0px;
+	
+	padding-bottom: 15px;
+	
+	background-color:#fec;
+
+}
+/* eMember: move text in box slightly further up */
+.wp-emember-warning-msgbox-image {
+	margin-top: 10px;
+	padding-right: 10px;
+}
+
+/* eMember: remove Free Membership from registration form (4th field) and border */
+#wp_emember_regoForm table tr:nth-child(4) {
+	/* temporary removal due to reCAPTCHA not working otherwise 
+	display:none; */
+}
+
+/* style registration Form: no borders, slightly narrower */
+#wp_emember_regoForm table,  #wp_emember_regoForm table td {
+	border: none;
+}
+#wp_emember_regoForm table.forms {
+	width: 80% !important;
+	padding-left: 50px;
+}
+
+/* eMember Login Widget looks shocking */
+.eMember_logged_widget a {
+	font-size: 1.2em;
+}
+.eMember_logged_user_info_section {
+	word-wrap:none;
+	display:block;
+	font-size: 1.2em;
+}
+.eMember_highlight {
+	display:block;
+	margin-top: 5px;
+}
+#wp_emember_loginForm a {
+	font-size: 1.2em;
+}
+
+/* eMember Login Widget looks ultra terrible */
+#wp_emember_loginForm td, #wp_emember_loginForm table  {
+	border: none;
+}
+
+
+/********************************
+ * eStore Tweaks                *
+ ********************************/
+ 
+/* eStore: Thank You page styling */
+.eStore_thank_you_your_order, .eStore_thank_you_download_links, .eStore_thank_you_total_cost, .eStore_thank_you_txn_id, .eStore_thank_you_email {
+	font-size: 1.1em;
+}
+/* eStore: price label could be larger than 0.000000000000001 points */
+.eStore_price_label, .eStore_price_value {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+/* turn "Price" into "Introductory Price" */
+.eStore_price_label:before {
+	content:'Sale ';
+}
+/* and give that line a bit more space at the top */
+.eStore_price {
+	padding-top: 15px;
+}
+/* sale price styling */
+.eStore_oldprice {
+	padding-top: 10px;
+	font-size:1.3em;
+	font-weight: bold;
+	color: #999;
+}
+/* turn "Old Price" into "Reguilar Price" */
+.eStore_oldprice:before {
+	content:'Regular ';
+}
+/* shift buy now button to the right */
+.eStore_buy_now_button, .eStore_add_to_cart_button {
+	float:right;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	margin-top: -30px !important;
+	border: none;
+}
+
+/* eStore Shoping Cart */
+.shopping_cart {
+	
+}
+.shopping_cart table, .shopping_cart table td, .shopping_cart table th {
+	font-size: 1.2em !important;
+	border: none;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.shopping_cart table th {
+	background-color:inherit;
+	border-bottom: solid;
+	border-bottom-width:medium;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.shopping_cart table {
+	border:thin;
+	border-style:solid;
+	border-width:thin;
+}
+
+/* make that Buy Now box look stunning (border and background)*/
+.eStore-product.eStore-fancy-wrapper, .shopping_cart table {
+	/* courtesy of http://border-radius.com */
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-width: 0px;
+	/* courtesy of http://www.colorzilla.com/gradient-editor/ */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0.16) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.16)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.16) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,0,0,0.16) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0.16) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0.16) 0%,rgba(0,0,0,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+/* style the description to "readable" */
+.eStore-product-description {
+	padding-top: 20px;
+	padding-left: 10px;
+	font-size: 1.0em;
+}
+
+/* PayPal Checkout button */
+input[type=image].eStore_paypal_checkout_button {
+	float:right;
+	border:none !important;
+	padding-right: 20px;
+	width: 143px;
+	height:auto;
+}
+
+/* add and remove buttons - enough with the borders already */
+input.eStore_remove_item_button, input.eStore_empty_cart_button {
+	border: none;
+}
+
+/* add left padding to items and errors in the shopping cart */
+.eStore_error_message, .shopping_cart a {
+	padding-left: 10px;
+}
+	
+/********************************
+ * Jetpack Tweaks               *
+ ********************************/
+
+/* Jetpack Contact Form looks terrible */
+.email {
+	height:25px !important;
+	font-size:1.1em !important;
+}
+.grunion-field-label.name {
+	 margin-top: 20px;;
+	 margin-bottom: 10px;
+ }
+ .grunion-field-label.email {
+	 margin-top: 20px;;
+	 margin-bottom: 10px;
+	 font-size: 1em !important;
+ }
+ .grunion-field-label.url {
+	 margin-top: 20px;;
+	 margin-bottom: 10px;
+ }
+ .grunion-field-label.textarea {
+	 margin-top: 20px;;
+	 margin-bottom: 10px;
+ }
+
+/* login-widget: adios, dashboard link */
+li.dashboard-link {
+	display: none;
+}
+
+/* add padding to H3 tags in posts */
+.entry-content h3 {
+	padding-top: 30px;
+}
+
+/* style the line "Add your voice" above comments */
+h3#reply-title.comment-reply-title {
+	padding-top: 10px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+}
+
+/* add borders around large images */
+#main p img.aligncenter.size-full, #main p img.aligncenter.size-large, #main p img.aligncenter.size-medium {
+	border: solid;
+	border-width: 2px;
+	border-color: #999;
+	background: #eee;
+/*
+	padding: 25px;
+	max-width: 110%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+*/
+}
+
+/* remove borders from imgaes that are aligned right */
+p img.alignright {
+	border: none;
+	padding-right: 10px;
+	
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+}
+
+/* slightly larger Gravatar image */
+img#grav-6d24aab95e30d0e827a22fd7b4f515fa-0.avatar.avatar-74.photo.grav-hashed.grav-hijack, img.avatar.avatar-74.photo {
+        width: 115px;
+        height: 115px;
+}
