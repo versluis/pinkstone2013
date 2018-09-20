@@ -13,9 +13,10 @@
  /* == CHANGELOG ==
 
  v1.5 - September 2018
- * added Apple Podcasts Badge underneath podcast articles
- * added Sticther Badge underneath podcast articles
+ * added Apple Podcasts Badge to podcast articles
+ * added Stitcher Badge to podcast articles
  * source maintenance
+ * added YouTube Badge to podcast categories
 
  v1.4 - September 2018
  * split p margins between top and bottom to better display Google Auto Ads
@@ -412,5 +413,16 @@ img#grav-6d24aab95e30d0e827a22fd7b4f515fa-0.avatar.avatar-74.photo.grav-hashed.g
     margin-right: auto;
 	margin-top: -10px;
 	width: 200px;
+	height: auto;
+}
+
+/* style YouTube Badge */
+#youtube-badge {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+	margin-top: 0px;
+	margin-bottom: 12px;
+	width: 260px;
 	height: auto;
 }
